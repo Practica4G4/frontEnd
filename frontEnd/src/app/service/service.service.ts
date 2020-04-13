@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { RegistroUsuario } from '../models/registro-usuario';
 import { HttpClient } from '@angular/common/http';
+import { RegistroUsuario } from '../models/usuario/registro/registro-usuario';
+import { AutenticarUsuario } from '../models/usuario/autenticar/autenticar-usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,8 @@ export class ServiceService {
     return this.http.post(this.urlApi + '/usuario/registrar',usuario);
   }
 
+  autenticarUsuario(usuario: AutenticarUsuario){
+    return this.http.post(this.urlApi + '/usuario/autenticar',usuario);
+  }
 
 }

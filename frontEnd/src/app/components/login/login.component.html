@@ -1,0 +1,40 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col s3">
+        </div>
+        <div class="col s5">
+            <div class="card">
+                <div class="card-content">
+                    <form #usuarioForm="ngForm" (ngSubmit)="autenticarUsuario(usuarioForm)">                       
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div class="col s4">
+                                </div>
+                                
+                                <img style="border-radius: 20px 20px 0 0;" src="assets\pictures\images.png" alt="login" class="card-img-top mx-auto m-2 rounded-circle w-50">
+                                
+                                <br>
+                                <br>
+                                <br>
+                                
+                                <input type="text" name="noCuenta" #dpi="ngModel" 
+                                    [(ngModel)]="usuarioSeleccionado.noCuenta" placeholder="Numero de cuenta">
+
+                                <input type="password" name="contrasena" #nombre="ngModel"
+                                [(ngModel)]="usuarioSeleccionado.contrasena" placeholder="Ingresa tu contrasena">
+
+                                <div class="card-action">
+                                    <div class="input-field col s12">
+                                        <button class="btn right" style="margin-left: 2px"> Ingresar</button>
+                                        <button class="btn right" (click)="resetForm(usuarioForm)"> Limpiar Formulario</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
