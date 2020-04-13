@@ -1,0 +1,40 @@
+import { Component, OnInit } from '@angular/core';
+import { RegistroUsuario } from '../../models/registro-usuario';
+import { ServiceService } from '../../service/service.service';
+import { NgForm } from '@angular/forms';
+import { IfStmt } from '@angular/compiler';
+
+
+declare var M: any;
+@Component({
+  selector: 'app-registro',
+  templateUrl: './registro.component.html',
+  styleUrls: ['./registro.component.css']
+})
+export class RegistroComponent implements OnInit {
+
+  usuarioSeleccionado = new RegistroUsuario();
+  constructor(private service: ServiceService) { }
+
+  ngOnInit(): void {
+    this.usuarioSeleccionado = new RegistroUsuario();
+  }
+
+  regitrarUsuario(form: NgForm){
+    if(form.value.dpi){
+      this.service.postRegistrarUsuario(form.value).subscribe(res =>{
+        M.toast({html: 'Usuario Creado'});
+        this.resetForm(form);
+      });
+    }
+  }
+
+  resetForm(form?: NgForm){
+    if(form){
+      form.reset();
+      this.usuarioSeleccionado = new RegistroUsuario();
+      M.toast({html: 'Formulario limpiado'});
+    }
+  }
+
+}
