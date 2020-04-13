@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegistroUsuario } from '../../models/registro-usuario';
+import { RegistroUsuario } from '../../models/usuario/registro/registro-usuario';
 import { ServiceService } from '../../service/service.service';
 import { NgForm } from '@angular/forms';
 import { IfStmt } from '@angular/compiler';
