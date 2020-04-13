@@ -3,6 +3,8 @@ import { RegistroUsuario } from '../../models/usuario/registro/registro-usuario'
 import { ServiceService } from '../../service/service.service';
 import { NgForm } from '@angular/forms';
 import { IfStmt } from '@angular/compiler';
+import { Router } from '@angular/router';
+
 
 
 declare var M: any;
@@ -14,7 +16,7 @@ declare var M: any;
 export class RegistroComponent implements OnInit {
 
   usuarioSeleccionado = new RegistroUsuario();
-  constructor(private service: ServiceService) { }
+  constructor(private service: ServiceService,private router: Router) { }
 
   ngOnInit(): void {
     this.usuarioSeleccionado = new RegistroUsuario();
@@ -25,6 +27,12 @@ export class RegistroComponent implements OnInit {
       this.service.postRegistrarUsuario(form.value).subscribe(res =>{
         M.toast({html: 'Usuario Creado'});
         this.resetForm(form);
+        this.router.navigate(['/login']);
+      }, (err: any) => { 
+        if(err.status == 400){
+          M.toast({html: 'dpi o numero de cuenta ya estan en uso.'});
+          this.resetForm(form);
+        }
       });
     }
   }
