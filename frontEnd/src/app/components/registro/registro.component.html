@@ -1,0 +1,49 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col s3">
+        </div>
+        <div class="col s5">
+            <div class="card">
+                <div class="card-content">
+                    <form #usuarioForm="ngForm" (ngSubmit)="regitrarUsuario(usuarioForm)">                       
+                        <div class="row">
+                            <div class="input-field col s12">
+
+                                <input type="text" name="dpi" #dpi="ngModel" 
+                                    [(ngModel)]="usuarioSeleccionado.dpi" placeholder="Ingresa tu dpi">
+
+                                <input type="text" name="nombre" #nombre="ngModel"
+                                [(ngModel)]="usuarioSeleccionado.nombre" placeholder="Ingresa tus nombres">
+
+                                <input type="text" name="apellido" #apellido="ngModel"
+                                [(ngModel)]="usuarioSeleccionado.apellido" placeholder="Ingresa tus apellidos">
+
+                                <input type="text" name="noCuenta" #noCuenta="ngModel"
+                                [(ngModel)]="usuarioSeleccionado.noCuenta" placeholder="Ingresa tui numero de cuenta">
+
+
+                                <input type="text" name="saldoInicial" #saldoIncial="ngModel"
+                                [(ngModel)]="usuarioSeleccionado.saldoInicial" placeholder="Saldo Inicial">
+
+
+                                <input type="text" name="correoElectronico" #correoElectronico="ngModel"
+                                [(ngModel)]="usuarioSeleccionado.correoElectronico" placeholder="Ingresa Correo electronico">
+
+                                <input type="text" name="contrasena" #contrasena="ngModel"
+                                [(ngModel)]="usuarioSeleccionado.contrasena" placeholder="Ingresa Contrasena">
+
+                                <div class="card-action">
+                                    <div class="input-field col s12">
+                                        <button class="btn right" style="margin-left: 2px"> Registrar</button>
+                                        <button class="btn right" (click)="resetForm(usuarioForm)"> Limpiar Formulario</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
