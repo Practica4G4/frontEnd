@@ -26,8 +26,8 @@ export class RegistroComponent implements OnInit {
     if(form.value.dpi){
       this.service.postRegistrarUsuario(form.value).subscribe(res =>{
         M.toast({html: 'Usuario Creado'});
-        this.resetForm(form);
         this.router.navigate(['/login']);
+
       }, (err: any) => { 
         if(err.status == 400){
           M.toast({html: 'dpi o numero de cuenta ya estan en uso.'});
@@ -41,7 +41,6 @@ export class RegistroComponent implements OnInit {
     if(form){
       form.reset();
       this.usuarioSeleccionado = new RegistroUsuario();
-      M.toast({html: 'Formulario limpiado'});
     }
   }
 
