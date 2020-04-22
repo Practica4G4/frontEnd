@@ -7,14 +7,15 @@ import {Router} from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  user: any;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   get isLogin(){
-    if(localStorage.getItem('usuario') != null){
+    this.user = JSON.parse(localStorage.getItem('usuario'));
+    if(this.user != null){
       return true;
     }else{
       return false;
