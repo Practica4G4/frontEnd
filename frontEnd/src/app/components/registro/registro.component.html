@@ -1,49 +1,57 @@
+<div class="col-md-8 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form #usuarioForm="ngForm" (ngSubmit)="regitrarUsuario(usuarioForm)">
 
-<div class="container">
-    <div class="row">
-        <div class="col s3">
+        <div class="form-group">
+          <label for="dpi">DPI</label>
+          <input type="text" name="dpi" #dpi="ngModel" id="dpi" class="form-control"
+                 [(ngModel)]="usuarioSeleccionado.dpi" placeholder="Ingresa tu dpi" autofocus>
         </div>
-        <div class="col s5">
-            <div class="card">
-                <div class="card-content">
-                    <form #usuarioForm="ngForm" (ngSubmit)="regitrarUsuario(usuarioForm)">                       
-                        <div class="row">
-                            <div class="input-field col s12">
 
-                                <input type="text" name="dpi" #dpi="ngModel" 
-                                    [(ngModel)]="usuarioSeleccionado.dpi" placeholder="Ingresa tu dpi">
+        <div class="form-group">
+          <label for="nombre">Nombres</label>
+          <input type="text" name="nombre" #nombre="ngModel" id="nombre" class="form-control"
+                 [(ngModel)]="usuarioSeleccionado.nombre" placeholder="Ingresa tus nombres">
+        </div>
 
-                                <input type="text" name="nombre" #nombre="ngModel"
-                                [(ngModel)]="usuarioSeleccionado.nombre" placeholder="Ingresa tus nombres">
+        <div class="form-group">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" name="apellido" #apellido="ngModel" id="apellidos" class="form-control"
+                 [(ngModel)]="usuarioSeleccionado.apellido" placeholder="Ingresa tus apellidos">
+        </div>
 
-                                <input type="text" name="apellido" #apellido="ngModel"
-                                [(ngModel)]="usuarioSeleccionado.apellido" placeholder="Ingresa tus apellidos">
+        <div class="form-group">
+          <label for="cuenta">No Cuenta</label>
+          <input type="text" name="noCuenta" #noCuenta="ngModel" id="cuenta" class="form-control"
+                 [(ngModel)]="usuarioSeleccionado.noCuenta" placeholder="Ingresa tui numero de cuenta">
+        </div>
 
-                                <input type="text" name="noCuenta" #noCuenta="ngModel"
-                                [(ngModel)]="usuarioSeleccionado.noCuenta" placeholder="Ingresa tui numero de cuenta">
+        <div class="form-group">
+          <label for="saldo">Saldo</label>
+          <input type="text" name="saldoInicial" #saldoIncial="ngModel" id="saldo" class="form-control"
+                 [(ngModel)]="usuarioSeleccionado.saldoInicial" placeholder="Saldo Inicial">
+        </div>
+
+        <div class="form-group">
+          <label for="correoElectronico">Correo Electronico</label>
+          <input type="email" name="correoElectronico" #correoElectronico="ngModel" id="correoElectronico" class="form-control"
+                 [(ngModel)]="usuarioSeleccionado.correoElectronico" aria-describedby="emailHelp" placeholder="Ingresa Correo electronico">
+        </div>
+
+        <div class="form-group">
+          <label for="contrasenia">Contrasenia</label>
+          <input type="password" name="contrasena" #contrasena="ngModel" id="contrasenia" class="form-control"
+                 [(ngModel)]="usuarioSeleccionado.contrasena" placeholder="Ingresa Contrasenia">
+        </div>
 
 
-                                <input type="text" name="saldoInicial" #saldoIncial="ngModel"
-                                [(ngModel)]="usuarioSeleccionado.saldoInicial" placeholder="Saldo Inicial">
 
 
-                                <input type="text" name="correoElectronico" #correoElectronico="ngModel"
-                                [(ngModel)]="usuarioSeleccionado.correoElectronico" placeholder="Ingresa Correo electronico">
 
-                                <input type="text" name="contrasena" #contrasena="ngModel"
-                                [(ngModel)]="usuarioSeleccionado.contrasena" placeholder="Ingresa Contrasena">
 
-                                <div class="card-action">
-                                    <div class="input-field col s12">
-                                        <button class="btn right" style="margin-left: 2px"> Registrar</button>
-                                        <button class="btn right" (click)="resetForm(usuarioForm)"> Limpiar Formulario</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>        
+        <button type="submit" class="btn btn-success btn-block ">Registrar</button>
+      </form>
     </div>
+  </div>
 </div>
