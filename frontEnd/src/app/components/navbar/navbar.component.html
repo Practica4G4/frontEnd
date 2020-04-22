@@ -10,6 +10,11 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item" >
+          <a class="nav-link"  routerLink="/tipo-de-cambio" *ngIf="isLogin"><i class="fas fa-chart-line"></i> Tipo de Cambio</a>
+        </li>
+
         <li class="nav-item" >
           <a class="nav-link"  routerLink="/registro" *ngIf="!isLogin"><i class="fas fa-user-plus"></i> Registrarse</a>
         </li>
