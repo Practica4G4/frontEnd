@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TipoDeCambioComponent } from './components/tipo-de-cambio/tipo-de-cambio.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TransferenciaComponent } from './components/transferencia/transferencia.component';
+import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-saldo.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TransferenciaComponent } from './components/transferencia/transferencia
     PerfilComponent,
     NavbarComponent,
     TipoDeCambioComponent,
-    TransferenciaComponent
+    TransferenciaComponent,
+    ConsultarSaldoComponent
   ],
   imports: [
     BrowserModule,
