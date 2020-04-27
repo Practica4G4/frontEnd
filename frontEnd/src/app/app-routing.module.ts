@@ -5,6 +5,7 @@ import {RegistroComponent} from './components/registro/registro.component';
 import {LoginComponent} from './components/login/login.component';
 import {PerfilComponent} from './components/perfil/perfil.component';
 import {TipoDeCambioComponent} from './components/tipo-de-cambio/tipo-de-cambio.component';
+import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'tipo-de-cambio',
     component: TipoDeCambioComponent
+  },
+  {
+    path: 'transferencia',
+    component: TransferenciaComponent
   }
 ];
 
