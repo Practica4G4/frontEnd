@@ -3,6 +3,8 @@
   <div class="card">
     <div class="card-body">
       <form>
+
+        <label>Tipo de Cambio de Referencia vigente para el {{tipoDeCambio.fecha}}</label>
         <div class="form-group">
           <fieldset disabled="">
             <label class="control-label" for="dolar">Dolar</label>
@@ -13,7 +15,7 @@
         <div class="form-group">
           <fieldset disabled="">
             <label class="control-label" for="quetzal">Quetzal</label>
-            <input class="form-control" id="quetzal" type="text" placeholder="Q. 7.83" disabled="">
+            <input class="form-control" id="quetzal" type="text" placeholder="Q. {{tipoDeCambio.tipoCambio}}" disabled="">
           </fieldset>
         </div>
       </form>
@@ -38,7 +40,7 @@
 
       <button type="submit" class="btn btn-success btn-block" (click)="consultarPorFecha(fecha)">Ingresar</button>
       <hr>
-      <table class="table table-hover">
+      <table class="table table-hover" *ngIf="tipoDeCambioFecha">
         <thead>
         <tr>
           <th scope="col">Fecha</th>
