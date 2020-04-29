@@ -17,7 +17,7 @@
                     <label>Nombres:</label>
                 </div>
                 <div class="col-md-8">
-                    <p></p>
+                    <p> {{usuarios.nombre}} </p>
                 </div>
                 </div>
     
@@ -26,7 +26,7 @@
                     <label>Apellidos:</label>
                 </div>
                 <div class="col-md-8">
-                    <p></p>
+                    <p>{{usuarios.apellido}}</p>
                 </div>
                 </div>
     
@@ -35,7 +35,7 @@
                     <label>No Cuenta:</label>
                 </div>
                 <div class="col-md-8">
-                    <p></p>
+                    <p>{{usuarios.noCuenta}}</p>
                 </div>
                 </div>
     
@@ -44,7 +44,7 @@
                     <label>Saldo actual: </label>
                 </div>
                 <div class="col-md-8">
-                    <p></p>
+                    <p>{{saldoActual}}</p>
                 </div>
                 </div>
     
@@ -65,9 +65,9 @@
                 <div class="col-md-8">
                     <select class="browser-default custom-select" 
                             [(ngModel)]="selectedValue">
-                        <option selected>No. Cuenta</option>
                         <option *ngFor="let c of countries" 
-                                [ngValue]="c" >{{c.name}}
+                                [ngValue]="c" >
+                                    {{c.nombre}}
                         </option>
                     </select>
                 </div>
@@ -79,7 +79,7 @@
                     <label>Monto a transferir:</label>
                 </div>
                 <div class="col-md-8">
-                    <input mdbInput type="text" name="monto" class="form-control form-control-sm">
+                    <input mdbInput type="text" name="monto" class="form-control form-control-sm" [(ngModel)]="montoTransferir">
                 </div>
             </div>
 
