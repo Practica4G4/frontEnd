@@ -1,1 +1,98 @@
-<p>transferencia works!</p>
+<div class="container">
+    <div style="text-align: center;">
+        <h2> Transferencia</h2>
+    </div>
+    <div class="row profile">
+      
+        <div class="col-md-7">
+            <div class="profile-content">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    
+                <div style="text-align: center;">
+                    <h2> Datos personales</h2>
+                </div>
+
+                <div class="row">
+                <div class="col-md-4 profile-usertitle-name">
+                    <label>Nombres:</label>
+                </div>
+                <div class="col-md-8">
+                    <p></p>
+                </div>
+                </div>
+    
+                <div class="row">
+                <div class="col-md-4 profile-usertitle-name">
+                    <label>Apellidos:</label>
+                </div>
+                <div class="col-md-8">
+                    <p></p>
+                </div>
+                </div>
+    
+                <div class="row">
+                <div class="col-md-4 profile-usertitle-name">
+                    <label>No Cuenta:</label>
+                </div>
+                <div class="col-md-8">
+                    <p></p>
+                </div>
+                </div>
+    
+                <div class="row">
+                <div class="col-md-4 profile-usertitle-name">
+                    <label>Saldo actual: </label>
+                </div>
+                <div class="col-md-8">
+                    <p></p>
+                </div>
+                </div>
+    
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div style="text-align: center;">
+                <h2> Datos de la transferencia </h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 profile-usertitle-name">
+                    <label>Cuentahabiente beneficiado:</label>
+                </div>
+
+                <div class="col-md-8">
+                    <select class="browser-default custom-select" 
+                            [(ngModel)]="selectedValue">
+                        <option selected>No. Cuenta</option>
+                        <option *ngFor="let c of countries" 
+                                [ngValue]="c" >{{c.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>  
+            
+            <br>
+            <div class="row">
+                <div class="col-md-4 profile-usertitle-name">
+                    <label>Monto a transferir:</label>
+                </div>
+                <div class="col-md-8">
+                    <input mdbInput type="text" name="monto" class="form-control form-control-sm">
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-success btn-block "
+                            (click) ="transferirMonto()">Transferir</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+  </div>
+  
