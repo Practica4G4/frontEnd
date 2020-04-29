@@ -3,10 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class EnviromentService {
+export class EnvironmentService {
 
-  readonly urlApi = 'http://64.225.24.183:9350/';
-
-
+  API_URI = 'http://64.225.24.183:9350';
   constructor() { }
 }

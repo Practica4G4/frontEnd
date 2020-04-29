@@ -3,6 +3,8 @@
   <div class="card">
     <div class="card-body">
       <form>
+
+        <label>Tipo de Cambio de Referencia vigente para el {{tipoDeCambio.fecha}}</label>
         <div class="form-group">
           <fieldset disabled="">
             <label class="control-label" for="dolar">Dolar</label>
@@ -13,7 +15,7 @@
         <div class="form-group">
           <fieldset disabled="">
             <label class="control-label" for="quetzal">Quetzal</label>
-            <input class="form-control" id="quetzal" type="text" placeholder="Q. 7.83" disabled="">
+            <input class="form-control" id="quetzal" type="text" placeholder="Q. {{tipoDeCambio.tipoCambio}}" disabled="">
           </fieldset>
         </div>
       </form>
@@ -29,16 +31,16 @@
     <div class="card-body">
       <form>
         <div class="form-group">
-          <label for="fecha">Fecha de Nacimiento</label>
-          <input #fecha name="fecha_de_nacimiento" type="text" class="form-control"
-                 placeholder="Enter Fecha de Nacimiento" id="fecha" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+          <label for="fecha">Fecha Inicial</label>
+          <input #fecha name="fecha_inicial" type="text" class="form-control"
+                 placeholder="Ingresar fecha inicial" id="fecha" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
         </div>
       </form>
 
 
       <button type="submit" class="btn btn-success btn-block" (click)="consultarPorFecha(fecha)">Ingresar</button>
       <hr>
-      <table class="table table-hover">
+      <table class="table table-hover" *ngIf="tipoDeCambioFecha">
         <thead>
         <tr>
           <th scope="col">Fecha</th>
@@ -47,15 +49,12 @@
         </thead>
         <tbody>
 
-        <tr class="table-secondary">
-          <th scope="row">1/1/2020</th>
-          <td>7.69884</td>
+
+        <tr class="table-secondary" *ngFor="let tipoCambio of tipoDeCambioFechas">
+          <th scope="row">{{tipoCambio.fecha}}</th>
+          <td>{{tipoCambio.venta}}</td>
         </tr>
 
-        <tr class="table-secondary">
-          <th scope="row">2/1/2020</th>
-          <td>7.69884</td>
-        </tr>
 
         </tbody>
       </table>
