@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RegistroUsuario} from 'src/app/models/usuario/registro/registro-usuario';
-import {ServiceService} from 'src/app/service/service.service';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
+import {UsuarioService} from '../../service/usuario/usuario.service';
 
 declare var M: any
 
@@ -13,7 +13,7 @@ declare var M: any
 })
 export class LoginComponent implements OnInit {
 
-    constructor(private service: ServiceService, private router: Router) {
+    constructor(private service: UsuarioService, private router: Router) {
     }
 
     usuarioSeleccionado = new RegistroUsuario();
