@@ -33,8 +33,8 @@ export class ConsultarSaldoComponent implements OnInit {
   obtenerSaldoActual(){
     this.transService.getSaldoActual(this.usuarios.noCuenta).subscribe(
       res=>{
-        console.log('SaldoActual')
-        console.log(res)
+        //console.log('SaldoActual')
+        //console.log(res)
         this.sA = res;
         this.saldoActual = this.sA.saldoCuenta;
       }, error => console.log(error)

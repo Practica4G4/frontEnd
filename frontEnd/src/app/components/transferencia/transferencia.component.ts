@@ -58,6 +58,10 @@ export class TransferenciaComponent implements OnInit {
           this.obtenerSaldoActual();
           //ACTUALIZAR EL LOCAL STORAGE
           
+          //rederigir a otra pantalla
+          alert('Transferencia exitosa')
+          this.router.navigate([`consulta-saldo`]);
+
         }, error => console.log(error)
       );
     }else{
@@ -80,7 +84,7 @@ export class TransferenciaComponent implements OnInit {
     this.transService.getSaldoActual(this.usuarios.noCuenta).subscribe(
       res=>{
         console.log('SaldoActual')
-        console.log(res)
+        //console.log(res)
         this.sA = res;
         this.saldoActual = this.sA.saldoCuenta;
       }, error => console.log(error)
