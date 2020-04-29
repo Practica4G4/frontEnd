@@ -15,6 +15,7 @@ export class TipoDeCambioComponent implements OnInit {
 
   usuarios: any = {};
   tipoDeCambio: any = {};
+  tipoDeCambioFechas: any = [];
 
   tipoDeCambioFecha = false;
 
@@ -36,5 +37,12 @@ export class TipoDeCambioComponent implements OnInit {
   consultarPorFecha(fecha: HTMLInputElement) {
     console.log(fecha.value);
     this.tipoDeCambioFecha = true;
+    this.tipoCambio.getTipoCambioFecha(fecha.value).subscribe(
+      res => {
+        this.tipoDeCambioFechas = res;
+
+        console.log(this.tipoDeCambioFechas);
+      }, error => console.log(error)
+    );
   }
 }
