@@ -1,0 +1,63 @@
+<div class="col-md-6 offset-md-3">
+  <h3>Tipo de Cambio</h3>
+  <div class="card">
+    <div class="card-body">
+      <form>
+
+        <label>Tipo de Cambio de Referencia vigente para el {{tipoDeCambio.fecha}}</label>
+        <div class="form-group">
+          <fieldset disabled="">
+            <label class="control-label" for="dolar">Dolar</label>
+            <input class="form-control" id="dolar" type="text" placeholder="$ 1.00" disabled="">
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset disabled="">
+            <label class="control-label" for="quetzal">Quetzal</label>
+            <input class="form-control" id="quetzal" type="text" placeholder="Q. {{tipoDeCambio.tipoCambio}}" disabled="">
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="col-md-6 offset-md-3">
+  <h3>Tipo de Cambio Por Fecha</h3>
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="fecha">Fecha Inicial</label>
+          <input #fecha name="fecha_inicial" type="text" class="form-control"
+                 placeholder="Ingresar fecha inicial" id="fecha" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }">
+        </div>
+      </form>
+
+
+      <button type="submit" class="btn btn-success btn-block" (click)="consultarPorFecha(fecha)">Ingresar</button>
+      <hr>
+      <table class="table table-hover" *ngIf="tipoDeCambioFecha">
+        <thead>
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">TCR 1/</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <tr class="table-secondary" *ngFor="let tipoCambio of tipoDeCambioFechas">
+          <th scope="row">{{tipoCambio.fecha}}</th>
+          <td>{{tipoCambio.venta}}</td>
+        </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
