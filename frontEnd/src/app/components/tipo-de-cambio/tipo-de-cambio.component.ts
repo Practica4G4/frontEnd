@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {TipoCambioService} from "../../service/tipo-cambio/tipo-cambio.service";
+import {TipoCambioService} from '../../service/tipo-cambio/tipo-cambio.service';
 
 @Component({
   selector: 'app-tipo-de-cambio',
