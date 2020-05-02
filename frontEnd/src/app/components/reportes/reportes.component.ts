@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TabsetConfig } from 'ngx-bootstrap/tabs';
+import {Transferencias} from "../../models/transferencia";
 
 // such override allows to keep some initial values
 
@@ -14,6 +15,9 @@ export function getTabsetConfig(): TabsetConfig {
   providers: [{ provide: TabsetConfig, useFactory: getTabsetConfig }]
 })
 export class ReportesComponent implements OnInit {
+
+  transferenciasRecibidas: Transferencias;
+  transferenciasRealizadas: Transferencias;
 
   constructor() { }
 
