@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EnvironmentService } from '../environment/environment.service';
-import { Transferencia } from 'src/app/models/transferencia';
+import {Transferencia, Transferencias} from 'src/app/models/transferencia';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -28,4 +29,11 @@ export class TransferenciaService {
     return this.http.get(`${this.env.API_URI}/usuario/obtenerSaldoCuenta/${id}`);
   }
 
+  getTransferenciasRecibidas(id: string): Observable<Transferencias> {
+    return this.http.get<Transferencias>(`${this.env.API_URI}/reportes/transferenciasRecibidas/${id}`);
+  }
+
+  getTransferenciasRealizadas(id: string): Observable<Transferencias> {
+    return this.http.get<Transferencias>(`${this.env.API_URI}/reportes/transferenciasRealizadas/${id}`);
+  }
 }
