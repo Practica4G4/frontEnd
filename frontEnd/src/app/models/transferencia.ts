@@ -3,3 +3,11 @@ export class Transferencia {
     cuentaOrigen: string;
     cuentaDestino: string;
 }
+
+export class DetalleTransferencia{
+  id_transferencia: number;
+  monto: number;
+  fecha: string;
+  cuenta_origen: number;
+  cuenta_destino: number;
+}
