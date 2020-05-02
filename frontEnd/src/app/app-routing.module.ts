@@ -7,6 +7,7 @@ import {PerfilComponent} from './components/perfil/perfil.component';
 import {TipoDeCambioComponent} from './components/tipo-de-cambio/tipo-de-cambio.component';
 import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-saldo.component';
+import {ReportesComponent} from "./components/reportes/reportes.component";
 
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'consulta-saldo',
     component: ConsultarSaldoComponent
+  },
+  {
+    path: 'reportes',
+    component: ReportesComponent
   }
 ];
 

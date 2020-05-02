@@ -13,6 +13,10 @@ import { TipoDeCambioComponent } from './components/tipo-de-cambio/tipo-de-cambi
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-saldo.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import {TabsModule} from "ngx-bootstrap/tabs";
+import { TranferenciasRealizadasComponent } from './components/reportes/tranferencias-realizadas/tranferencias-realizadas.component';
+import { TranferenciasRecibidasComponent } from './components/reportes/tranferencias-recibidas/tranferencias-recibidas.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-
     NavbarComponent,
     TipoDeCambioComponent,
     TransferenciaComponent,
-    ConsultarSaldoComponent
+    ConsultarSaldoComponent,
+    ReportesComponent,
+    TranferenciasRealizadasComponent,
+    TranferenciasRecibidasComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,9 @@ import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-
     HttpClientModule,
     FormsModule,
     BsDatepickerModule.forRoot(),
-    BrowserAnimationsModule
+    TabsModule.forRoot(),
+    BrowserAnimationsModule,
+    TabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
