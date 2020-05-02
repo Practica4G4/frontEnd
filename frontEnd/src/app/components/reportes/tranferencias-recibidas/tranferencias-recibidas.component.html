@@ -12,8 +12,8 @@
   </tr>
   </thead>
   <tbody *ngIf="tranferencias">
-  <tr *ngFor="let tranferencia of tranferencias.transferencias">
-    <th class="col-1">{{tranferencia.id_transferencia}}</th>
+  <tr *ngFor="let tranferencia of tranferencias.transferencias; let i = index">
+    <th class="col-1">{{i + 1}}</th>
     <td class="col-3">{{tranferencia.cuenta_origen}}</td>
     <td class="col-3">{{tranferencia.cuenta_destino}}</td>
     <td class="col-3">{{tranferencia.fecha}}</td>
