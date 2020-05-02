@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TabsetConfig } from 'ngx-bootstrap/tabs';
-import {Transferencias} from "../../models/transferencia";
+import {Transferencias} from '../../models/transferencia';
+import {TransferenciaService} from '../../service/transferencia/transferencia.service';
 
 // such override allows to keep some initial values
 
@@ -15,13 +16,22 @@ export function getTabsetConfig(): TabsetConfig {
   providers: [{ provide: TabsetConfig, useFactory: getTabsetConfig }]
 })
 export class ReportesComponent implements OnInit {
-
+  user: any;
   transferenciasRecibidas: Transferencias;
   transferenciasRealizadas: Transferencias;
 
-  constructor() { }
+  constructor(
+    private transferenciaService: TransferenciaService
+  ) { }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('usuario'));
+    this.getTransfernciasRealizadas();
+  }
+
+  getTransfernciasRealizadas(): void {
+    this.transferenciaService.getTransferenciasRealizadas(this.user.noCuenta.toString())
+      .subscribe(transferencias => this.transferenciasRealizadas = transferencias);
   }
 
 }

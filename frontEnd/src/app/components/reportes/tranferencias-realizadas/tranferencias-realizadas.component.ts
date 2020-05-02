@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Transferencias} from '../../../models/transferencia';
+import {TransferenciaService} from "../../../service/transferencia/transferencia.service";
 
 @Component({
   selector: 'app-tranferencias-realizadas',
@@ -7,11 +8,14 @@ import {Transferencias} from '../../../models/transferencia';
   styleUrls: ['./tranferencias-realizadas.component.css']
 })
 export class TranferenciasRealizadasComponent implements OnInit {
-
+  user: any;
   @Input()
   tranferencias: Transferencias;
 
-  constructor() { }
+  constructor(
+    private transferenciaService: TransferenciaService
+  ) {
+  }
 
   ngOnInit(): void {
   }
