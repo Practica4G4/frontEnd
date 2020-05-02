@@ -33,5 +33,7 @@ export class TransferenciaService {
     return this.http.get<Transferencias>(`${this.env.API_URI}/reportes/transferenciasRecibidas/${id}`);
   }
 
-
+  getTransferenciasRealizadas(id: string): Observable<Transferencias> {
+    return this.http.get<Transferencias>(`${this.env.API_URI}/reportes/transferenciasRealizadas/${id}`);
+  }
 }
