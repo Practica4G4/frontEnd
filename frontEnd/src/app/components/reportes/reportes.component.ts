@@ -27,11 +27,17 @@ export class ReportesComponent implements OnInit {
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('usuario'));
     this.getTransfernciasRealizadas();
+    this.getTransfernciasRecibidas();
   }
 
   getTransfernciasRealizadas(): void {
     this.transferenciaService.getTransferenciasRealizadas(this.user.noCuenta.toString())
       .subscribe(transferencias => this.transferenciasRealizadas = transferencias);
+  }
+
+  getTransfernciasRecibidas(): void {
+    this.transferenciaService.getTransferenciasRecibidas(this.user.noCuenta.toString())
+      .subscribe(transferencias => this.transferenciasRecibidas = transferencias);
   }
 
 }

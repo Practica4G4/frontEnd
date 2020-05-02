@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Transferencias} from '../../../models/transferencia';
 
 @Component({
   selector: 'app-tranferencias-recibidas',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tranferencias-recibidas.component.css']
 })
 export class TranferenciasRecibidasComponent implements OnInit {
+  @Input()
+  tranferencias: Transferencias;
 
   constructor() { }
 
