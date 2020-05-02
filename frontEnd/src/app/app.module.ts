@@ -15,6 +15,7 @@ import { TransferenciaComponent } from './components/transferencia/transferencia
 import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-saldo.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import {TabsModule} from "ngx-bootstrap/tabs";
+import { TranferenciasRealizadasComponent } from './components/reportes/tranferencias-realizadas/tranferencias-realizadas.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {TabsModule} from "ngx-bootstrap/tabs";
     TipoDeCambioComponent,
     TransferenciaComponent,
     ConsultarSaldoComponent,
-    ReportesComponent
+    ReportesComponent,
+    TranferenciasRealizadasComponent
   ],
   imports: [
     BrowserModule,
