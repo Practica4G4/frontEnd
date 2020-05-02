@@ -14,6 +14,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-saldo.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
+import {TabsModule} from "ngx-bootstrap/tabs";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { ReportesComponent } from './components/reportes/reportes.component';
     HttpClientModule,
     FormsModule,
     BsDatepickerModule.forRoot(),
-    BrowserAnimationsModule
+    TabsModule.forRoot(),
+    BrowserAnimationsModule,
+    TabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
