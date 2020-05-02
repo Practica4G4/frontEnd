@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EnvironmentService } from '../environment/environment.service';
 import { Transferencia } from 'src/app/models/transferencia';
+import {Observable} from "rxjs";
 
 
 @Injectable({

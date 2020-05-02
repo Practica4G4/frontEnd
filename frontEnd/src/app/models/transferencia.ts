@@ -11,3 +11,7 @@ export class DetalleTransferencia{
   cuenta_origen: number;
   cuenta_destino: number;
 }
+
+export class Transferencias {
+  transferencias: Array<DetalleTransferencia>;
+}
