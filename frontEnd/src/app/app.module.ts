@@ -16,6 +16,7 @@ import { ConsultarSaldoComponent } from './components/consultar-saldo/consultar-
 import { ReportesComponent } from './components/reportes/reportes.component';
 import {TabsModule} from "ngx-bootstrap/tabs";
 import { TranferenciasRealizadasComponent } from './components/reportes/tranferencias-realizadas/tranferencias-realizadas.component';
+import { TranferenciasRecibidasComponent } from './components/reportes/tranferencias-recibidas/tranferencias-recibidas.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TranferenciasRealizadasComponent } from './components/reportes/tranfere
     TransferenciaComponent,
     ConsultarSaldoComponent,
     ReportesComponent,
-    TranferenciasRealizadasComponent
+    TranferenciasRealizadasComponent,
+    TranferenciasRecibidasComponent
   ],
   imports: [
     BrowserModule,
