@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroUsuario } from '../../models/usuario/registro/registro-usuario';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormControl, FormBuilder, Validators  } from '@angular/forms';
 import { IfStmt } from '@angular/compiler';
 import { Router } from '@angular/router';
 import {UsuarioService} from '../../service/usuario/usuario.service';
@@ -16,13 +16,26 @@ declare var M: any;
 export class RegistroComponent implements OnInit {
 
   usuarioSeleccionado = new RegistroUsuario();
-  constructor(private service: UsuarioService,private router: Router) { }
+  constructor(private service: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
     this.usuarioSeleccionado = new RegistroUsuario();
   }
 
   regitrarUsuario(form: NgForm){
+
+
+
+    if (!this.isText(form.value.nombre)) {
+      alert('Solo se adminen letras en el campo nombre');
+      return;
+    }
+
+    if (!this.isText(form.value.apellido)) {
+      alert('Solo se adminen letras en el campo apellido');
+      return;
+    }
+
     if(form.value.dpi){
       this.service.postRegistrarUsuario(form.value).subscribe(res =>{
         M.toast({html: 'Usuario Creado'});
@@ -44,4 +57,8 @@ export class RegistroComponent implements OnInit {
     }
   }
 
+
+  isText(value: string){
+    return !/[^a-zA-Z]/.test(value);
+  }
 }

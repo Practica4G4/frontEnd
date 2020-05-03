@@ -11,14 +11,16 @@
 
         <div class="form-group">
           <label for="nombre">Nombres</label>
-          <input type="text" name="nombre" #nombre="ngModel" id="nombre" class="form-control"
+          <input pattern="[A-Za-z]"  type="text" name="nombre" #nombre="ngModel" id="nombre" class="form-control"
                  [(ngModel)]="usuarioSeleccionado.nombre" placeholder="Ingresa tus nombres">
+          <span class="validity"></span>
         </div>
 
         <div class="form-group">
           <label for="apellidos">Apellidos</label>
-          <input type="text" name="apellido" #apellido="ngModel" id="apellidos" class="form-control"
+          <input pattern="[A-Za-z]"  type="text" name="apellido" #apellido="ngModel" id="apellidos" class="form-control"
                  [(ngModel)]="usuarioSeleccionado.apellido" placeholder="Ingresa tus apellidos">
+          <span class="validity"></span>
         </div>
 
         <div class="form-group">
