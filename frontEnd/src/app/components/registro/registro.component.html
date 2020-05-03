@@ -1,7 +1,7 @@
 <div class="col-md-8 offset-md-2">
   <div class="card">
     <div class="card-body">
-      <form #usuarioForm="ngForm" (ngSubmit)="regitrarUsuario(usuarioForm)">
+      <form #usuarioForm="ngForm" (ngSubmit)="regitrarUsuario(usuarioForm)" >
 
         <div class="form-group">
           <label for="dpi">DPI</label>
@@ -23,9 +23,25 @@
 
         <div class="form-group">
           <label for="cuenta">No Cuenta</label>
-          <input type="text" name="noCuenta" #noCuenta="ngModel" id="cuenta" class="form-control"
+          <input type="number" 
+                class="form-control"
+                name="noCuenta" 
+                #noCuenta="ngModel"
+                ng-minlength="8" 
+                ng-maxlength="8"  
+                 id="cuenta" 
+                 class="form-control"
                  [(ngModel)]="usuarioSeleccionado.noCuenta" placeholder="Ingresa tui numero de cuenta">
+
+                 <span class="help-block" 
+                     ng-show="((usuarioSeleccionado.noCuenta.$error.minlength ||
+                              usuarioSeleccionado.noCuenta.$error.maxlength) && 
+                              usuarioSeleccionado.noCuenta.$dirty) "
+                     >
+                              No. Cuenta debe contar con 8 digitos y solo acepta digitos
+               </span>
         </div>
+        <br>
 
         <div class="form-group">
           <label for="saldo">Saldo</label>

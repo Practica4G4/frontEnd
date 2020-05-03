@@ -33,6 +33,10 @@ export class RegistroComponent implements OnInit {
       alert('El valor del campo dpi debe ser un numero de 13 digitos');
       return;
     }
+    if(form.value.noCuenta.toString().length !== 8){
+      alert('El valor del campo noCuenta debe ser un numero de 8 digitos');
+      return;
+    }
     if (form.value.dpi) {
       this.service.postRegistrarUsuario(form.value).subscribe(res => {
         M.toast({html: 'Usuario Creado'});
