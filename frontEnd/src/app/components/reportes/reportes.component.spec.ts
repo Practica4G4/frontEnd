@@ -28,4 +28,5 @@ describe('ReportesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

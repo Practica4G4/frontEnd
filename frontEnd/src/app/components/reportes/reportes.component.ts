@@ -26,8 +26,11 @@ export class ReportesComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('usuario'));
-    this.getTransfernciasRealizadas();
-    this.getTransfernciasRecibidas();
+    if(this.user){
+      this.getTransfernciasRealizadas();
+      this.getTransfernciasRecibidas();
+    }
+    
   }
 
   getTransfernciasRealizadas(): void {
