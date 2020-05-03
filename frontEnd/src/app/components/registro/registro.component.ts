@@ -25,6 +25,11 @@ export class RegistroComponent implements OnInit {
   }
 
   regitrarUsuario(form: NgForm) {
+    if (!this.isNumber(form.value.dpi)) {
+      alert('Solo se adminen numeros en campo dpi');
+      return;
+    }
+
     if (form.value.dpi) {
       this.service.postRegistrarUsuario(form.value).subscribe(res => {
         M.toast({html: 'Usuario Creado'});
