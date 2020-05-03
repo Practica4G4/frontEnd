@@ -1,3 +1,4 @@
+
 import {Component, OnInit} from '@angular/core';
 import {RegistroUsuario} from '../../models/usuario/registro/registro-usuario';
 import {NgForm} from '@angular/forms';
@@ -17,6 +18,7 @@ export class RegistroComponent implements OnInit {
 
   usuarioSeleccionado = new RegistroUsuario();
 
+
   constructor(private service: UsuarioService, private router: Router) {
   }
 
@@ -25,6 +27,15 @@ export class RegistroComponent implements OnInit {
   }
 
   regitrarUsuario(form: NgForm) {
+    if (!this.isText(form.value.nombre)) {
+      alert('Solo se adminen letras en el campo nombre');
+      return;
+    }
+
+    if (!this.isText(form.value.apellido)) {
+      alert('Solo se adminen letras en el campo apellido');
+      return;
+    }
     if (!this.isNumber(form.value.dpi)) {
       alert('Solo se adminen numeros en campo dpi');
       return;
@@ -59,6 +70,9 @@ export class RegistroComponent implements OnInit {
   }
 
 
+  isText(value: string){
+    return !/[^a-zA-Z]/.test(value);
+  }
   isNumber(value: string | number): boolean {
     return ((value != null) &&
       (value !== '') &&
