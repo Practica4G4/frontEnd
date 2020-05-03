@@ -18,4 +18,8 @@ export class UsuarioService {
   autenticarUsuario(usuario: AutenticarUsuario){
     return this.http.post(this.env.API_URI + '/usuario/autenticar', usuario);
   }
+
+  getInfoUsuario(id: string){
+    return this.http.get(`${this.env.API_URI}/usuario/mostrarPerfil/${id}`);
+  }
 }
