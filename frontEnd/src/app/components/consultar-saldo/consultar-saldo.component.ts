@@ -16,7 +16,8 @@ export class ConsultarSaldoComponent implements OnInit {
 
   usuarios: any = {};
   saldoActual: number = 0;
-  sA: any;
+  saldoTemporal: any;
+  bandera: boolean = false;
 
   ngOnInit(): void {
     if (localStorage.getItem('usuario') != null) {
@@ -35,8 +36,8 @@ export class ConsultarSaldoComponent implements OnInit {
       res=>{
         //console.log('SaldoActual')
         //console.log(res)
-        this.sA = res;
-        this.saldoActual = this.sA.saldoCuenta;
+        this.saldoTemporal = res;
+        this.saldoActual = this.saldoTemporal.saldoCuenta;
       }, error => console.log(error)
     );
   }

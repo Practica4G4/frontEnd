@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TranferenciasRecibidasComponent } from './tranferencias-recibidas.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('TranferenciasRecibidasComponent', () => {
   let component: TranferenciasRecibidasComponent;
@@ -8,6 +10,10 @@ describe('TranferenciasRecibidasComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ],
       declarations: [ TranferenciasRecibidasComponent ]
     })
     .compileComponents();
