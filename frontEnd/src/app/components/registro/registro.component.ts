@@ -23,6 +23,7 @@ export class RegistroComponent implements OnInit {
   }
 
   regitrarUsuario(form: NgForm){
+
     if(form.value.dpi){
       this.service.postRegistrarUsuario(form.value).subscribe(res =>{
         M.toast({html: 'Usuario Creado'});
