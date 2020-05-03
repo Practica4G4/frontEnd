@@ -29,7 +29,10 @@ export class RegistroComponent implements OnInit {
       alert('Solo se adminen numeros en campo dpi');
       return;
     }
-
+    if (form.value.dpi.toString().length !== 13){
+      alert('El valor del campo dpi debe ser un numero de 13 digitos');
+      return;
+    }
     if (form.value.dpi) {
       this.service.postRegistrarUsuario(form.value).subscribe(res => {
         M.toast({html: 'Usuario Creado'});
