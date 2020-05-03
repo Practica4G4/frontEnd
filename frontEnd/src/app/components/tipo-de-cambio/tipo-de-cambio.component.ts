@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {TipoCambioService} from '../../service/tipo-cambio/tipo-cambio.service';
+import { Router } from '@angular/router';
+import { TipoCambioService } from '../../service/tipo-cambio/tipo-cambio.service';
 
 @Component({
   selector: 'app-tipo-de-cambio',
@@ -36,13 +36,20 @@ export class TipoDeCambioComponent implements OnInit {
 
   consultarPorFecha(fecha: HTMLInputElement) {
     console.log(fecha.value);
-    this.tipoDeCambioFecha = true;
-    this.tipoCambio.getTipoCambioFecha(fecha.value).subscribe(
-      res => {
-        this.tipoDeCambioFechas = res;
+    var dia = fecha.value.split('/')
+    var myInt = parseInt(dia[0], 10)
+    if (myInt >= 2) {
+      this.tipoDeCambioFecha = true;
+      this.tipoCambio.getTipoCambioFecha(fecha.value).subscribe(
+        res => {
+          this.tipoDeCambioFechas = res;
 
-        console.log(this.tipoDeCambioFechas);
-      }, error => console.log(error)
-    );
+          console.log(this.tipoDeCambioFechas);
+        }, error => console.log(error)
+      );
+    }else{
+      alert('solo se pueden seleccionar 3 dias antes a la fecha actual.');
+      console.log("solo se pueden seleccionar 3 dias antes.");
+    }
   }
 }
