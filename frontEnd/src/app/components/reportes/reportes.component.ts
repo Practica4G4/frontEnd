@@ -31,7 +31,6 @@ export class ReportesComponent implements OnInit {
       this.getTransfernciasRealizadas();
       this.getTransfernciasRecibidas();
     }
-
   }
 
   getTransfernciasRealizadas(): void {
