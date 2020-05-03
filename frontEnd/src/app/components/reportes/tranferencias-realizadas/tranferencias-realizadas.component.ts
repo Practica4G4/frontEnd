@@ -12,9 +12,7 @@ export class TranferenciasRealizadasComponent implements OnInit {
   @Input()
   tranferencias: Transferencias;
 
-  constructor(
-    private transferenciaService: TransferenciaService
-  ) {
+  constructor() {
   }
 
   ngOnInit(): void {
