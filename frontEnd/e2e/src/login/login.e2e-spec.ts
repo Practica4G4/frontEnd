@@ -1,5 +1,5 @@
 import {LogInComponent} from './login.po';
-import {browser, logging, Key} from 'protractor';
+import {browser, logging, Key, protractor} from 'protractor';
 
 
 describe('Pagina de Inicio de Sesion', () => {
@@ -42,21 +42,23 @@ describe('Pagina de Inicio de Sesion', () => {
 
   it('no deberia hacer nada con usuario incorrecto', () => {
     component.getCuentaInput().sendKeys('1234561');
-    component.getRegisterButton().sendKeys('1111655');
+    component.getContraseniaInput().sendKeys('1111655');
     const button = component.getLoginButton();
     button.click();
     expect(browser.driver.getCurrentUrl()).toEqual('http://localhost:4201/login');
   });
 
-  it('Deberia redirigir al perfil con usuario incorrecto', () => {
+  it('Deberia redirigir al perfil con usuario correcto', () => {
     component.getCuentaInput().sendKeys('12345');
-    component.getRegisterButton().sendKeys('1234');
+    component.getContraseniaInput().sendKeys('1234');
     const button = component.getLoginButton();
     button.click();
-    browser.actions().sendKeys(Key.ENTER).perform();
-    expect(browser.driver.getCurrentUrl()).toEqual('http://localhost:4201/login');
+    const EC = protractor.ExpectedConditions;
+    browser.wait(EC.urlContains('perfil'), 2000)
+      .then((result) => {
+        expect(result).toEqual(true);
+      });
   });
-
 
 
   afterEach(async () => {

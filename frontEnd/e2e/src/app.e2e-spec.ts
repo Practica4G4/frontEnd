@@ -10,7 +10,7 @@ describe('Pagina de inicio', () => {
 
   it('deberia mostrarse el nombre del sitio', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('SISTEMA BANCARIO');
+    expect(page.getTitleText()).toEqual('SISTEMA BANCARIO REVISION DE PRACTICA 3 Y 4');
   });
 
   it('deberian ser 2 items si no hay sesion iniciada', () => {
