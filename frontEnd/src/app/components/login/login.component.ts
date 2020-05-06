@@ -26,9 +26,6 @@ export class LoginComponent implements OnInit {
 
     autenticarUsuario(form: NgForm) {
         this.service.autenticarUsuario(form.value).subscribe(res => {
-            console.log(res);
-            alert('Usuario Logueado');
-
             this.usuario = res;
             localStorage.setItem('usuario', JSON.stringify(this.usuario.usuario[0]));
             this.router.navigate(['/perfil']);
