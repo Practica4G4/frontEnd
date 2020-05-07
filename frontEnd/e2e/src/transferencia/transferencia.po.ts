@@ -32,5 +32,4 @@ export class TransferenciaComponent {
   getBtnTransferir() {
     return element(by.css('button.btn.btn-success.btn-block'));
   }
-
 }
