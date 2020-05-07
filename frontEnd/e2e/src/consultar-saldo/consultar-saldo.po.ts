@@ -6,20 +6,6 @@ export class ConsultarSaldoComponent {
     return browser.get('/consulta-saldo');
   }
 
-  logIn() {
-    const component: LogInComponent = new LogInComponent();
-    component.navigateTo();
-    component.getCuentaInput().sendKeys('12345');
-    component.getContraseniaInput().sendKeys('1234');
-    const button = component.getLoginButton();
-    button.click();
-    const EC = protractor.ExpectedConditions;
-    browser.wait(EC.urlContains('perfil'), 2000)
-      .then(() => {
-        this.navigateTo();
-      });
-  }
-
   getEncabezado() {
     return element(by.css('app-consultar-saldo > div.container > div > h2'));
   }

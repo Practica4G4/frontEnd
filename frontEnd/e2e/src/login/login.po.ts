@@ -1,4 +1,4 @@
-import {browser, by, element} from 'protractor';
+import {browser, by, element, protractor} from 'protractor';
 
 export class LogInComponent {
   navigateTo() {
@@ -23,5 +23,19 @@ export class LogInComponent {
 
   getContraseniaInput() {
     return element(by.name('contrasena'));
+  }
+
+  logIn(fun: () => {}) {
+    const component: LogInComponent = new LogInComponent();
+    component.navigateTo();
+    component.getCuentaInput().sendKeys('12345');
+    component.getContraseniaInput().sendKeys('1234');
+    const button = component.getLoginButton();
+    button.click();
+    const EC = protractor.ExpectedConditions;
+    browser.wait(EC.urlContains('perfil'), 4000)
+      .then(() => {
+        fun();
+      });
   }
 }

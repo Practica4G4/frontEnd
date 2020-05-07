@@ -1,15 +1,15 @@
 <div class="container">
     <div style="text-align: center;">
-        <h2> Transferencia</h2>
+        <h2 id="transferencia-title"> Transferencia</h2>
     </div>
     <div class="row profile">
-      
+
         <div class="col-md-7">
             <div class="profile-content">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    
+
                 <div style="text-align: center;">
-                    <h2> Datos personales</h2>
+                    <h2 id="datos-personales"> Datos personales</h2>
                 </div>
 
                 <div class="row">
@@ -20,7 +20,7 @@
                     <p> {{usuarios.nombre}} </p>
                 </div>
                 </div>
-    
+
                 <div class="row">
                 <div class="col-md-4 profile-usertitle-name">
                     <label>Apellidos:</label>
@@ -29,7 +29,7 @@
                     <p>{{usuarios.apellido}}</p>
                 </div>
                 </div>
-    
+
                 <div class="row">
                 <div class="col-md-4 profile-usertitle-name">
                     <label>No Cuenta:</label>
@@ -38,7 +38,7 @@
                     <p>{{usuarios.noCuenta}}</p>
                 </div>
                 </div>
-    
+
                 <div class="row">
                 <div class="col-md-4 profile-usertitle-name">
                     <label>Saldo actual: </label>
@@ -47,14 +47,14 @@
                     <p>{{saldoActual}}</p>
                 </div>
                 </div>
-    
+
             </div>
             </div>
         </div>
 
         <div class="col-md-5">
             <div style="text-align: center;">
-                <h2> Datos de la transferencia </h2>
+                <h2 id="datos-transferencia"> Datos de la transferencia </h2>
             </div>
 
             <div class="row">
@@ -63,23 +63,23 @@
                 </div>
 
                 <div class="col-md-8">
-                    <select class="browser-default custom-select" 
+                    <select id="slc-cuentabiente" class="browser-default custom-select"
                             [(ngModel)]="selectedValue">
-                        <option *ngFor="let c of countries" 
+                        <option *ngFor="let c of countries"
                                 [ngValue]="c" >
                                     {{c.nombre}}
                         </option>
                     </select>
                 </div>
-            </div>  
-            
+            </div>
+
             <br>
             <div class="row">
                 <div class="col-md-4 profile-usertitle-name">
                     <label>Monto a transferir:</label>
                 </div>
                 <div class="col-md-8">
-                    <input mdbInput type="text" name="monto" class="form-control form-control-sm" [(ngModel)]="montoTransferir">
+                    <input mdbInput type="text" name="monto" id="monto" class="form-control form-control-sm" [(ngModel)]="montoTransferir">
                 </div>
             </div>
 
@@ -95,4 +95,3 @@
         </div>
     </div>
   </div>
-  

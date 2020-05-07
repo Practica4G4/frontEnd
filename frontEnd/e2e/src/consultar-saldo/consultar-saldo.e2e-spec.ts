@@ -1,16 +1,19 @@
 import {ConsultarSaldoComponent} from './consultar-saldo.po';
 import {browser, logging, Key, protractor} from 'protractor';
+import {LogInComponent} from '../login/login.po';
 
 describe('Pagina para Consultar Saldo', () => {
   let component: ConsultarSaldoComponent;
+  let loginComponent: LogInComponent;
 
   beforeEach(() => {
+    loginComponent = new LogInComponent();
     component = new ConsultarSaldoComponent();
-    component.logIn();
+    loginComponent.logIn(component.navigateTo);
   });
 
   it('deberia mostrar encabezado de saldo actual', () => {
-      expect(component.getEncabezado().getText()).toEqual('SALDO ACTUAL');
+    expect(component.getEncabezado().getText()).toEqual('SALDO ACTUAL');
   });
 
   it('deberia mostrar 4 etiquetas de datos', () => {

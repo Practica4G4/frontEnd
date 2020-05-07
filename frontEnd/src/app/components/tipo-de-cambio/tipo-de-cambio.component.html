@@ -1,5 +1,5 @@
 <div class="col-md-6 offset-md-3">
-  <h3>Tipo de Cambio</h3>
+  <h3 id="tipo-de-cambio-header">Tipo de Cambio</h3>
   <div class="card">
     <div class="card-body">
       <form>
@@ -38,7 +38,7 @@
       </form>
 
 
-      <button type="submit" class="btn btn-success btn-block" (click)="consultarPorFecha(fecha)">Ingresar</button>
+      <button type="submit" id="btn-ingresar" class="btn btn-success btn-block" (click)="consultarPorFecha(fecha)">Ingresar</button>
       <hr>
       <table class="table table-hover" *ngIf="tipoDeCambioFecha">
         <thead>
